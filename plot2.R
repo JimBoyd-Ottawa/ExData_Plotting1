@@ -1,0 +1,5 @@
+library(lubridate)
+power_consumption_5 <- mutate(power_consumption_4, Date_Time = ymd_hms(paste(ymd(NewDate),Time)))
+png(file="plot2.png", width=480, height=480)
+with(power_consumption_5,plot(Date_Time,active_power,ylab = "Global Active Power (kilowatts)", type = "l", xlab = ""))
+dev.off()
